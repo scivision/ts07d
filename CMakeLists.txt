@@ -4,7 +4,9 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release CACHE STRING "Release or Debug" FORCE)
 endif()
 
-project(EMM_TS07D LANGUAGES Fortran)
+project(EMM_TS07D
+  LANGUAGES Fortran
+  HOMEPAGE_URL "https://rbspgway.jhuapl.edu/analysis_models")
 
 enable_testing()
 

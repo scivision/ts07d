@@ -1,0 +1,21 @@
+name: ci
+
+on:
+  push:
+    paths:
+      - "**/*.f90"
+      - "**/*.f"
+      - "**/*.cmake"
+      - "**/CMakeLists.txt"
+
+
+jobs:
+
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - run: cmake -B build
+    - run: cmake --build build
+    - run: ctest --test-dir build -V
